@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InvestoByte</title>
+    <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <!-- Search bar inside the sidebar -->
+        <input type="text" id="search" placeholder="Search articles..." />
+        <nav id="navigation">
+          <!-- Navigation links will be dynamically added here -->
+        </nav>
+      </aside>
+
+      <!-- Button to toggle the sidebar (placed outside the sidebar) -->
+      <button class="sidebarToggle" id="sidebarToggle">☰</button>
+
+      <!-- Popup message for small screens -->
+      <div id="popup" class="popup" style="display: none">
+        <div class="popup-content">
+          <h2>This website works best on larger screens</h2>
+          <p>
+            For a better experience, please use a device with a wider screen,
+            such as a computer.
+          </p>
+          <button onclick="closePopup()">Okay, got it!</button>
+        </div>
+      </div>
+
+      <!-- Main content area -->
+      <main class="content">
+        <div id="content">
+          <!-- Markdown content will be loaded here -->
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
