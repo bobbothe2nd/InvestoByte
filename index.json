@@ -1,0 +1,46 @@
+[
+    {
+      "section": "Cats",
+      "articles": [
+        {
+          "title": "Why do Cats Have Whiskers?",
+          "file": "cats/whyWhiskers.md"
+        },
+        {
+          "title": "Are Cats Superior to Dogs?",
+          "file": "cats/noDogs.md"
+        },
+        {
+          "title": "The Mystery of Catnaps",
+          "file": "cats/naps.md"
+        }
+      ]
+    },
+    {
+      "section": "Computer Science",
+      "articles": [
+        {
+          "title": "Introduction to Binary",
+          "file": "comSci/introBinary.md"
+        },
+        {
+          "title": "What is Machine Learning?",
+          "file": "comSci/machineLearning.md"
+        },
+        {
+          "title": "The Future of Quantum Computing",
+          "file": "comSci/quantumComputing.md"
+        }
+      ]
+    },
+    {
+      "section": "Investing",
+      "articles": [
+        {
+          "title": "How to Start Investing Today",
+          "file": "invest/startNow.md"
+        }
+      ]
+    }
+  ]
+  

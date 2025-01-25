@@ -1,0 +1,300 @@
+/* Basic reset and font styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Roboto", sans-serif;
+    background-color: #f9f9f9;
+    color: #333333;
+    line-height: 1.6;
+  }
+  
+  /* Sidebar styles */
+  .sidebar {
+    width: 280px;
+    background-color: rgba(0, 0, 0, 0.85); /* Slightly transparent */
+    color: #ffffff;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease; /* Smooth transition for sliding effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow-y: hidden;
+  }
+  
+  .sidebar.closed {
+    transform: translateX(-100%); /* Move sidebar out of view */
+  }
+  
+  /* Sidebar toggle button outside the sidebar */
+  .sidebarToggle {
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999; /* Ensure it's above all other content */
+    display: block;
+    background-color: darkgrey;
+    margin-left: 260px;
+    margin-top: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 0 8px 8px 0;
+    transition: margin-left 0.3s ease; /* Smooth transition for content shift */
+  }
+  
+  .sidebarToggle.shifted {
+    margin-left: 0px;
+    border-radius: 8px;
+  }
+  
+  /* Main content area */
+  .content {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-left: 280px; /* Adjust for the sidebar */
+    margin-right: 0px;
+    padding: 30px;
+    background-color: #ffffff;
+    transition: transform 0.3s ease; /* Smooth transition for sliding effect */
+  }
+  
+  .content.shifted {
+    transform: translateX(-140px); /* Move sidebar out of view */
+  }
+  
+  /* Optional styles for responsiveness */
+  @media (max-width: 768px) {
+    /* Sidebar behavior on small screens */
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+      box-shadow: none;
+    }
+    .content {
+      margin-left: 0;
+    }
+    .sidebarToggle {
+      margin-left: 0;
+      top: 20px;
+      left: 10px;
+    }
+    .sidebar.closed .sidebarToggle {
+      margin-left: 0;
+    }
+  
+    .sidebar nav ul li button {
+      font-size: 18px;
+      padding: 10px; /* Larger buttons for touch devices */
+    }
+  
+    #search {
+      font-size: 20px;
+      padding: 12px 16px;
+    }
+  
+    /* Update the content area for better readability on mobile */
+    .content h1 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+  
+    .content p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  
+    /* Ensure that the article preview buttons fit better */
+    .article-preview button {
+      width: 100%;
+      padding: 20px;
+      font-size: 16px;
+    }
+  
+    /* Fix article content area layout */
+    #content {
+      padding: 15px;
+      margin-top: 0; /* Remove extra top margin on small screens */
+    }
+  }
+  
+  /* Section titles (h2) */
+  .sidebar h2 {
+    color: #ffffff;
+    font-size: 30px; /* Increased font size for section headers */
+    margin-bottom: 10px; /* Reduced space between section headers */
+    font-weight: bold;
+  }
+  
+  /* Search input styling */
+  #search {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 20px; /* Reduced margin between search bar and section */
+    border-radius: 25px;
+    border: 1px solid #cccccc;
+    font-size: 18px;
+    background-color: #222222;
+    color: #ffffff;
+    transition: all 0.3s;
+  }
+  
+  #search:focus {
+    outline: none;
+    border-color: #ff6347; /* Subtle color on focus */
+  }
+  
+  /* Sidebar navigation list */
+  .sidebar nav ul {
+    list-style: none !important; /* Remove bullets */
+    padding: 0;
+    margin: 0;
+    display: block;
+  }
+  
+  /* Each list item in the sidebar */
+  .sidebar nav ul li {
+    margin-bottom: 12px; /* Optional: Adjust space between list items */
+    list-style: none !important; /* Remove any list style that may still apply */
+  }
+  
+  /* Hover effects for article buttons */
+  .sidebar nav ul li button:hover {
+    background-color: #ff6347; /* Modern hover effect */
+    color: #ffffff;
+    transform: scale(1.05); /* Slight button enlargement on hover */
+  }
+  
+  /* Hover effect for nested articles */
+  .sidebar nav ul li ul li button:hover {
+    background-color: #ff6347;
+    transform: scale(1.05);
+  }
+  
+  /* Main content styles */
+  .content h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333333;
+  }
+  
+  .content p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-indent: 16px;
+  }
+  
+  .content ul li,
+  .content ol li {
+    margin-left: 32px;
+    font-size: 18px;
+  }
+  
+  #content {
+    padding: 20px;
+    background-color: #ffffff;
+    margin-top: 30px;
+  }
+  
+  .article-preview button {
+    width: 100%;
+    padding: 15px;
+    text-align: left;
+    background-color: #f4f4f4;
+    border: 1px solid #dddddd;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s;
+  }
+  
+  .article-preview button:hover {
+    background-color: #ff6347; /* Matching hover color */
+    color: #ffffff;
+  }
+  
+  #navigation {
+    padding: 0;
+  }
+  
+  #navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #navigation li {
+    margin: 5px 0;
+  }
+  
+  #navigation hr {
+    margin: 10px 0;
+    border: 1px solid #cccccc;
+  }
+  
+  #navigation li button {
+    display: block;
+    transition: all 0.1s ease;
+    width: 100%;
+    text-align: left;
+    padding-left: 2px;
+  }
+  
+  /* Popup styling for small screens */
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it's above all content */
+    padding: 20px;
+  }
+  
+  .popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .popup h2 {
+    margin-bottom: 20px;
+  }
+  
+  .popup button {
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .popup button:hover {
+    background-color: #ff4500;
+  }
+  
+  /* Hide the sidebar toggle button on small screens */
+  @media (max-width: 768px) {
+    .sidebarToggle {
+      display: none;
+    }
+  }
+  
