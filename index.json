@@ -41,15 +41,6 @@
           "file": "invest/startNow.md"
         }
       ]
-    },
-    {
-      "section": "News Log",
-      "articles": [
-        {
-          "title": "Major Release 0 Versions",
-          "file": "news/versions0.md"
-        }
-      ]
     }
   ]
   
